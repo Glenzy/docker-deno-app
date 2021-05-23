@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+ notes:
+  build:
+   context: .
+  ports:
+   - 1993:1993 # app port
+  environment:
+   - SERVER_PORT=1993
+  volumes:
+   - ./:/app
+  command: run --allow-net /main.ts
+
