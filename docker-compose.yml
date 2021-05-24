@@ -10,5 +10,5 @@ services:
    - SERVER_PORT=1993
   volumes:
    - ./:/app
-  command: run --allow-net /main.ts
+  command: run --allow-net backend/main.ts
 
