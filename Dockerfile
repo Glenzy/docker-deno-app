@@ -15,7 +15,7 @@ COPY ./backend/main.ts /backend/main.ts
 RUN deno cache --import-map=/backend/import_map.json /backend/deps.ts
 
 #ADD FILE CHANGES
-ADD ./backend/ ./backend/
+ADD ./backend/ /backend/
 
 # Compile to cache
 RUN deno cache --import-map=/backend/import_map.json /backend/main.ts

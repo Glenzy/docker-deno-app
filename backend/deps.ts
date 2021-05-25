@@ -1,2 +1,1 @@
-
-export  * as http from "http/server.ts";
+export { serve } from "http/server.ts";
