@@ -1,5 +1,5 @@
-FROM hayd/alpine-deno:1.10.2
-
+FROM hayd/alpine-deno:1.10.2 
+# https://github.com/hayd/deno-docker/blob/master/alpine.dockerfile
 EXPOSE 1993
 
 WORKDIR /app
