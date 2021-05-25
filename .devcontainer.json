@@ -3,8 +3,8 @@
     "dockerComposeFile": [
 		"docker-compose.yml"
 	],
-    "service": "deno",
-    "workspaceFolder": "/app",
+	"service": "backend",
+	"workspaceFolder": "/app",
 	"extensions": [
 		"eamodio.gitlens",
 		"esbenp.prettier-vscode",
