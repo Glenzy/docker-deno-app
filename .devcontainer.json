@@ -1,7 +1,8 @@
 {
 	"name": "Existing Docker Compose (Extend)",
     "dockerComposeFile": [
-		"docker-compose.yml"
+		"docker-compose.yml",
+		"docker-compose.dev.yml"
 	],
 	"service": "backend",
 	"workspaceFolder": "/app",
@@ -9,6 +10,5 @@
 		"eamodio.gitlens",
 		"esbenp.prettier-vscode",
 		"denoland.vscode-deno",
-		"ameerthehacker.deno-vscode"
 	]
 }

@@ -19,4 +19,4 @@ ADD ./backend/ /backend/
 
 # Compile to cache
 RUN deno cache --import-map=/backend/import_map.json /backend/main.ts
-CMD PORT=1993 deno run --allow-net --import-map=/backend/import_map.json --allow-env /backend/main.ts
+CMD PORT=1993 deno run --allow-net --import-map=/backend/import_map.json --allow-env --unstable --watch /backend/main.ts
