@@ -18,13 +18,13 @@
     "target": "esnext",
     "paths": {
       "deno": [
-        "../home/deno/.deno/deno.d.ts"
+        "/bin/deno/.deno/deno.d.ts"
       ],
       "https://*": [
-        "../home/deno/.deno/deps/https/*"
+        "/bin/deno/.deno/deps/https/*"
       ],
       "http://*": [
-        "../home/deno/.deno/deps/http/*"
+        "/bin/deno/.deno/deps/http/*"
       ]
     }
   },
