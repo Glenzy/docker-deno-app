@@ -3,7 +3,8 @@ FROM hayd/alpine-deno:1.10.2
 EXPOSE 1993
 
 WORKDIR /app
-
+#add git
+RUN apk add git
 # Prefer not to run as root.
 USER deno
 
@@ -19,6 +20,5 @@ ADD ./backend/ /backend/
 
 # Compile to cache
 RUN deno cache --import-map=/backend/import_map.json /backend/main.ts
-#add git
-RUN apt-get -y install git
+
 CMD PORT=1993 deno run --allow-net --import-map=/backend/import_map.json --allow-env --unstable --watch /backend/main.ts
