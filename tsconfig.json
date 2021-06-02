@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "allowJs": true,
+    "checkJs": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "noLib": true,
+    "pretty": true,
+    "resolveJsonModule": true,
+    "plugins": [
+      {
+        "name": "deno_ls_plugin"
+      }
+    ],
+    "target": "esnext",
+    "paths": {
+      "deno": [
+        "/bin/deno/.deno/deno.d.ts"
+      ],
+      "https://*": [
+        "/bin/deno/.deno/deps/https/*"
+      ],
+      "http://*": [
+        "/bin/deno/.deno/deps/http/*"
+      ]
+    }
+  },
+  "include": [
+    "./**/*.ts"
+  ]
+}
