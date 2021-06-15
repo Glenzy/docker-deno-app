@@ -10,15 +10,13 @@ USER deno
 
 # Cache the dependencies as a layer (the following two steps are re-run only when deps.ts is modified).
 # Ideally cache deps.ts will download and compile _all_ external files used in main.ts.
-COPY ./backend/ /backend/
-# COPY ./backend/import_map.json /backend/import_map.json
-# COPY ./backend/main.ts /backend/main.ts
-RUN deno cache --import-map=/backend/import_map.json /backend/deps.ts /backend/router.ts
+COPY ./. /
+RUN deno cache --import-map=/backend/import_map.json /backend/config/deps.ts
 
 #ADD FILE CHANGES
-ADD ./backend/ /backend/
+ADD ./. /
 
 # Compile to cache
-RUN deno cache --import-map=/backend/import_map.json /backend/main.ts
+RUN deno cache --import-map=/backend/import_map.json /backend/server.ts /backend/main.ts
 
-CMD PORT=1993 deno run --allow-net --import-map=/backend/import_map.json --allow-env --unstable --watch /backend/main.ts
+CMD PORT=1993 deno run --allow-net --import-map=/backend/import_map.json --allow-env --allow-read --unstable --watch /backend/server.ts
