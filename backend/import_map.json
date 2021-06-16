@@ -1,7 +1,9 @@
 {
   "imports": {
-    "http/": "https://deno.land/std@0.97.0/http/",
     "/": "./",
-    "./": "./"
+    "./": "./",
+    "oak/": "https://deno.land/x/oak@v6.2.0/",
+    "oak_graphql/": "https://deno.land/x/oak_graphql@0.6.2/",
+    "dotenv/":"https://deno.land/x/dotenv/"
   }
 }

@@ -10,5 +10,5 @@ services:
    - SERVER_PORT=1993
   volumes:
    - ./:/app
-  command: run --allow-net --import-map=backend/import_map.json --allow-env --unstable --watch backend/main.ts
+  command: run --allow-net --import-map=backend/import_map.json --allow-env --allow-read --unstable --watch backend/server.ts
 
