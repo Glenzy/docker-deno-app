@@ -1,4 +1,4 @@
-import { Application, Router, RouterContext } from "oak/mod.ts";
+import { Application, Router } from "oak/mod.ts";
 import { config } from "dotenv/mod.ts";
 import { applyGraphQL, gql } from "oak_graphql/mod.ts";
 import {

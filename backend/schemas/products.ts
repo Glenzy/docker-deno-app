@@ -1,9 +1,5 @@
 import { gql } from 'oak_graphql/mod.ts';
 
-
-
-
-
 export const ProductTypes = gql`
   enum Brand {
     JORDAN,

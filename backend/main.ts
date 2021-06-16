@@ -6,10 +6,9 @@ import { resolvers } from "./resolvers/index.ts";
 export class App {
   public app: Application;
   public port: number;
-  public logger: any;
-  constructor(port: any) {
+  constructor(port: number | string) {
     this.app = new Application();
-    this.port = port;
+    this.port = +port;
     
     this.initializeMiddleware();
     this.initializeRoutes();
@@ -17,13 +16,11 @@ export class App {
 
   // initialize middleware
   private initializeMiddleware() {
-
     this.app.use(async (ctx, next) => {
       await next();
       const rt = ctx.response.headers.get("X-Response-Time");
       console.log(`${ctx.request.method} ${ctx.request.url} - ${rt}`);
     });
-
   }
 
   // initialize routes
@@ -36,10 +33,8 @@ export class App {
         return {  };
       }
     })
-    
-    
-    this.app.use(GraphQLService.routes(), GraphQLService.allowedMethods());
 
+    this.app.use(GraphQLService.routes(), GraphQLService.allowedMethods());
   }
   // server listen
   public async listen() {
